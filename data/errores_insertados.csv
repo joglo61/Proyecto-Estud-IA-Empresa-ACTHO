@@ -1,0 +1,22 @@
+﻿tabla,tipo_error,cantidad
+afiliados,filas duplicadas,70
+afiliados,correo vacío,60
+afiliados,correo en mayúsculas o con espacios,50
+afiliados,estado con mayúsculas o espacios,60
+afiliados,fecha_afiliacion en dd/mm/aaaa o aaaa/mm/dd,80
+afiliados,tipo con mayúsculas o espacios,100
+afiliados,nombre con mayúsculas o espacios,70
+participacion,filas duplicadas,300
+participacion,asistio con variantes de 'si',400
+participacion,asistio con variantes de 'no',200
+participacion,fecha en dd/mm/aaaa o aaaa/mm/dd,300
+participacion,"tipo_actividad con mayúsculas, espacios o plural",250
+participacion,"id_afiliado en minúscula, con espacios o sin guion",150
+encuestas,nps vacío,70
+encuestas,"nps fuera de rango (11, 15, -1)",40
+encuestas,"nps como texto ('9.0', ' 9', '9/10')",50
+encuestas,calidad vacía,30
+encuestas,"calidad fuera de rango (0, 6, 10)",30
+encuestas,"comentario en mayúsculas, con espacios, 'N/A' o '-'",200
+encuestas,fecha en dd/mm/aaaa o aaaa/mm/dd,120
+encuestas,filas duplicadas,150
