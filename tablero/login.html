@@ -11,15 +11,16 @@ h1{font-size:22px;margin:0 0 4px;color:var(--v)}p{font-size:13px;color:var(--mut
 label{display:block;font-size:12px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.6px;margin:14px 0 6px}
 input{width:100%;font:inherit;font-size:14px;padding:11px 14px;border:1px solid var(--line);border-radius:12px;outline:none}
 input:focus{border-color:var(--v)}
-.btn{width:100%;margin-top:22px}.err{color:#E0245E;font-size:12.5px;margin-top:12px;min-height:18px}
+.btn{width:100%;margin-top:22px}.btn.alt{margin-top:10px;background:#fff;color:var(--v);border:2px solid var(--v)}.btn.alt:hover{background:var(--v);color:#fff}.err{color:#E0245E;font-size:12.5px;margin-top:12px;min-height:18px}
 </style></head><body>
 <div class="hero"><div class="nav"><a class="logo" href="index.html">ac<b>th</b>o</a></div>
 <div class="c"><form class="card" id="f"><h1>Ingresar</h1><p>Accede a los tableros de afiliados.</p>
 <label for="u">Correo</label><input id="u" type="email" autocomplete="username" required>
 <label for="p">Contraseña</label><input id="p" type="password" autocomplete="current-password" required>
-<button class="btn" type="submit">Entrar</button><div class="err" id="e"></div></form></div></div>
+<button class="btn" type="submit">Entrar</button><button class="btn alt" type="button" id="demo">Entrar como evaluador</button><div class="err" id="e"></div></form></div></div>
 <script>
 sb.auth.getSession().then(({data})=>{if(data.session)location.replace('tableros.html')});
 document.getElementById('f').onsubmit=async e=>{e.preventDefault();
 if(await entrar(u.value,p.value))location.href='tableros.html';else{document.getElementById('e').textContent='Usuario o contraseña incorrectos.'}}
+document.getElementById('demo').onclick=async()=>{if(await entrar('evaluador@actho-demo.com','EstudIA-Demo-2026'))location.href='tableros.html';else document.getElementById('e').textContent='El acceso de evaluador no está disponible.'};
 </script></body></html>
