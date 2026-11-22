@@ -11,3 +11,10 @@ tablero/sql/02_datos.sql
 tablero/sql/03_cruce.sql
 tablero_empresas.csv
 tablero_empresas.xlsx
+
+datos/originales/
+datos/contexto/
+tablero/sql/02_datos.sql
+tablero/sql/03_cruce.sql
+tablero_empresas.csv
+tablero_empresas.xlsx
