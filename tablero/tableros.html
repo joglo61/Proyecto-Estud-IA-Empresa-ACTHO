@@ -7,7 +7,7 @@
 .wrap{max-width:1240px}.hero{padding-bottom:64px}.t{position:relative;z-index:1;padding:6px 32px 0}.t h1{font-size:34px;line-height:1.15;margin:0 0 8px;letter-spacing:-.4px}.t h1 b{color:var(--c)}.t p{margin:0;color:#E6DAFB;font-size:14px}
 .nav a.s{color:#fff;font-size:13px;font-weight:600;text-decoration:none}
 .cg{background:rgba(255,255,255,.16);border-radius:99px;padding:5px 13px;font-weight:600;color:#fff;font-size:13px;margin-right:14px}
-.m{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;margin-top:-38px;position:relative;z-index:2;padding-bottom:56px}
+.m{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;margin-top:-38px;position:relative;z-index:2;padding-bottom:0}
 .pn{flex:1 1 400px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 10px 26px rgba(81,0,187,.10);animation:up .7s cubic-bezier(.2,.7,.2,1) .1s backwards}
 .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.ph b{font-size:19px;color:var(--v)}
 .ph span{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--verde)}.ph i{width:9px;height:9px;border-radius:50%;background:var(--verde);animation:pg 1.6s ease-out infinite}
@@ -27,6 +27,23 @@
 .cl{display:flex;align-items:flex-end;gap:4px;height:70px}.cl i{flex:1;border-radius:4px 4px 0 0;transform-origin:bottom;animation:gy .9s cubic-bezier(.2,.7,.2,1) .5s backwards}
 .dd{display:flex;align-items:center;gap:16px}.dd svg circle{animation:dn 1.3s cubic-bezier(.2,.7,.2,1) .5s backwards}
 .lg{font-size:12px;color:var(--mut);line-height:1.9}.lg b{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+.ex{padding-bottom:40px}
+.bn{margin-top:20px;background:var(--v);border-radius:26px;padding:26px 24px;color:#fff;position:relative;overflow:hidden;animation:up .7s cubic-bezier(.2,.7,.2,1) .5s backwards}
+.bn:before{content:"";position:absolute;right:-70px;top:-80px;width:230px;height:230px;border-radius:50%;border:30px solid rgba(255,85,0,.5);animation:fl 6s ease-in-out infinite}
+.bn h3{position:relative;margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.8px;color:var(--c)}
+.bn .nn{position:relative;display:flex;flex-wrap:wrap;gap:8px}.bn .nn div{flex:1 1 200px;text-align:center;padding:8px 10px}
+.bn .nn strong{display:block;font-size:44px;line-height:1.1}.bn .nn b{display:block;font-size:13px;font-weight:600;margin-top:4px}.bn .nn small{font-size:12px;color:#E3D6FA}
+.gd{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;animation:up .7s cubic-bezier(.2,.7,.2,1) .6s backwards}
+.gd>b{display:block;font-size:18px;color:var(--v);margin-bottom:12px}.gd .ps{display:flex;flex-wrap:wrap;gap:18px}
+.gd .p{flex:1 1 240px;display:flex;gap:14px;align-items:flex-start}.gd .p i{flex:none;width:14px;height:14px;border-radius:50%;margin-top:4px}
+.gd .p b{display:block;font-size:14px;color:var(--ink)}.gd .p span{display:block;font-size:12.5px;color:var(--mut);line-height:1.5;margin-top:2px}
+.at{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px}
+.ac{flex:1 1 200px;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .25s,box-shadow .25s;animation:up .7s cubic-bezier(.2,.7,.2,1) backwards}
+.ac:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(81,0,187,.16)}
+.ac i{flex:none;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-weight:700;transition:transform .25s}.ac:hover i{transform:translateX(4px)}
+.ac b{display:block;font-size:14px;color:var(--ink)}.ac span{display:block;font-size:12px;color:var(--mut)}
+.pie{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;font-size:12.5px;color:var(--mut);animation:up .7s cubic-bezier(.2,.7,.2,1) .9s backwards}.pie b{color:var(--v)}
+@keyframes fl{50%{transform:translateY(-9px)}}
 @property --p{syntax:'<number>';initial-value:1;inherits:false}
 @keyframes pp{from{--p:0}to{--p:1}}
 .cu{animation:pp 1.5s cubic-bezier(.2,.7,.2,1) .25s backwards;counter-reset:n calc(var(--p)*var(--to,0))}.cu:after{content:counter(n)}
@@ -39,7 +56,7 @@
 </style></head><body>
 <div class="hero"><div class="nav"><a class="logo" href="index.html">ac<b>th</b>o</a><span><span style="font-size:13px;color:#D9C7FA;margin-right:18px">Sesión: <b id="usr" style="color:#fff"></b></span><span class="cg" id="cg" hidden></span><a class="s" href="#" onclick="salir();return false">Salir</a></span></div>
 <div class="wrap t"><h1>Esto necesita tu <b>atención hoy</b></h1><p>Las alertas se calculan con los datos anonimizados de ACTHO al 21 nov 2026.</p></div></div>
-<div class="wrap"><div class="m"><div class="pn"><div class="ph"><b>Para hoy</b><span><i></i>Actualizado 21 nov</span></div><div id="alertas"></div></div><div class="tl" id="tiles"></div></div></div>
+<div class="wrap"><div class="m"><div class="pn"><div class="ph"><b>Para hoy</b><span><i></i>Actualizado 21 nov</span></div><div id="alertas"></div></div><div class="tl" id="tiles"></div></div><div class="ex" id="extra"></div></div>
 <script>
 const CARGOS={direccion:'Dirección',junta:'Junta Directiva',comercial:'Comercial',eventos:'Experiencias y eventos',contabilidad:'Contabilidad'};
 const VR='#E0245E',AM='#FFB020',VE='#12A672',OR='#FF5500',MG='#CC3366',VI='#5100BB',CY='#00B8BF';
@@ -68,6 +85,25 @@ if(can('resumen'))T+=tile('tablero.html?v=dir','Resumen','Semáforo, vencimiento
 if(can('eventos')&&X.lin)T+=tile('tablero.html?v=ev','Eventos','Inscripciones por línea y modalidad.',barras(Object.entries(X.lin.Todos).sort((a,b)=>b[1]-a[1]),[VI,OR,MG,CY]),X.ev?f(sum(X.ev.map(e=>e.t.Todos))):'',X.ev?'inscripciones en '+X.ev.length+' eventos':'',j++);
 if(can('comunicaciones')&&X.enc&&X.pe)T+=tile('tablero.html?v=com','Comunicaciones','A quién escribir y sobre qué temas.',barras(Object.entries(X.enc.Todos.tem).sort((a,b)=>b[1]-a[1]).slice(0,4),[MG]),f(X.pe.Todos.per),'personas',j++);
 if(can('finanzas')&&X.venm)T+=tile('tablero.html?v=fin','Finanzas','Vencimientos y renovaciones por mes.',columnas(X.venm.Todos),f(sum(Object.entries(X.venm.Todos).filter(([k])=>k>='2027-01').map(e=>e[1]))),'vencen en 2027',j++);
-document.getElementById('tiles').innerHTML=T});
+document.getElementById('tiles').innerHTML=T;
+const kp=(n,l,sub,suf)=>`<div><strong>${n>=1000?f(n):cu(n)}${suf||''}</strong><b>${l}</b><small>${sub}</small></div>`;
+let N='';
+const nv=[];
+if(X.ev)nv.push(kp(sum(X.ev.map(e=>e.t.Todos)),'Inscripciones','en '+X.ev.length+' eventos'));
+if(can('comunicaciones')&&X.pe)nv.push(kp(X.pe.Todos.per,'Personas \u00fanicas','han asistido'));
+if(can('comunicaciones')&&X.enc)nv.push(kp(Math.round(X.enc.Todos.si/X.enc.Todos.n*100),'Satisfechos','de '+X.enc.Todos.n+' respuestas','%'));
+if(can('resumen'))nv.push(kp(D.n,'Afiliados vigentes','en la cartera'));
+if(nv.length)N+=`<div class="bn"><h3>ACTHO EN CIFRAS</h3><div class="nn">${nv.join('')}</div></div>`;
+if(can('resumen'))N+=`<div class="gd"><b>C\u00f3mo leer el sem\u00e1foro</b><div class="ps"><div class="p"><i style="background:${VR}"></i><div><b>Rojo</b><span>Vence en 90 d\u00edas o menos y sin asistencia en 6 meses: contactar primero.</span></div></div><div class="p"><i style="background:${AM}"></i><div><b>Amarillo</b><span>Una sola se\u00f1al de riesgo: dar seguimiento.</span></div></div><div class="p"><i style="background:${VE}"></i><div><b>Verde</b><span>Sin se\u00f1ales de riesgo: mantener la relaci\u00f3n.</span></div></div></div></div>`;
+const at=(c,t,sb,h,d)=>`<a class="ac" href="${h}" style="animation-delay:${d}s"><i style="background:${c}">\u2192</i><span><b>${t}</b><span>${sb}</span></span></a>`;
+let Q='',q=0;const dq=()=>(.7+(q++)*.08).toFixed(2);
+if(can('resumen'))Q+=at(VR,'Empresas en rojo','Lista para contactar','tablero.html?v=dir',dq());
+if(can('eventos')&&X.ev){const m=X.ev.reduce((a,e)=>e.t.Todos>a.t.Todos?e:a,X.ev[0]);Q+=at(VI,'Evento m\u00e1s grande',String(m.nom).slice(0,28)+' \u00b7 '+m.t.Todos,'tablero.html?v=ev',dq())}
+if(can('comunicaciones')&&X.pe)Q+=at(MG,'Personas recurrentes',X.pe.Todos.rec+' con 3 o m\u00e1s eventos','tablero.html?v=com',dq());
+if(can('finanzas'))Q+=at(OR,'Pendientes de renovar',D.vpas+' ya vencidas','tablero.html?v=fin',dq());
+if(Q)N+=`<div class="at">${Q}</div>`;
+N+=`<div class="pie"><span><b>Estud-IA \u00d7 ACTHO</b> \u00b7 Equipo PENTA DATA</span><span>Datos anonimizados \u00b7 corte 21 nov 2026</span></div>`;
+document.getElementById('extra').innerHTML=N;
+});
 </script>
 </body></html>
