@@ -4,3 +4,10 @@ __pycache__/
 datos/limpios/*
 !datos/limpios/.gitkeep
 Claude outputs/
+
+datos/originales/
+datos/contexto/
+tablero/sql/02_datos.sql
+tablero/sql/03_cruce.sql
+tablero_empresas.csv
+tablero_empresas.xlsx
