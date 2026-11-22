@@ -14,9 +14,9 @@ grid-template-areas:"hero hero n r" "hero hero s s" "hero hero ev c" "res evt co
 .b h3{margin:0 0 6px;font-size:20px;font-weight:700}.b p{margin:0;font-size:13px;opacity:.8}
 .b em{font-style:normal;font-size:13px;font-weight:600}
 a.b{transition:transform .15s}a.b:hover{transform:translateY(-3px)}
-.hero-b{grid-area:hero;background:var(--v);color:#fff;border:0;padding:34px;justify-content:flex-end}
-.hero-b:after{content:"";position:absolute;right:-80px;top:-100px;width:300px;height:300px;border:32px solid var(--o);border-radius:50%}
-.hero-b h1{font-size:34px;line-height:1.15;margin:0 0 12px;position:relative;z-index:1}.hero-b h1 i{font-style:normal;color:var(--c)}
+.hero-b{grid-area:hero;background:#4D00B6;color:#fff;border:0;padding:34px;justify-content:flex-end}
+.hero-b:after{display:none;content:"";position:absolute;right:-80px;top:-100px;width:300px;height:300px;border:32px solid var(--o);border-radius:50%}
+.hero-b .hv{position:relative;z-index:1;width:100%;flex:1;min-height:0;object-fit:contain;margin:-10px 0 6px;transform:scale(1.6);transform-origin:center}.hero-b h1{font-size:34px;line-height:1.15;margin:0 0 12px;position:relative;z-index:1}.hero-b h1 i{font-style:normal;color:var(--c)}
 .hero-b p{font-size:14px;color:#E6DAFB;margin:0 0 22px;max-width:420px;opacity:1;position:relative;z-index:1}
 .hero-b .btn{align-self:flex-start;position:relative;z-index:1}
 .n{grid-area:n}.r{grid-area:r}
@@ -41,7 +41,7 @@ a.b{transition:transform .15s}a.b:hover{transform:translateY(-3px)}
 </style></head><body>
 <div class="top"><a class="logo" href="index.html">ac<b>th</b>o</a><a class="btn" href="login.html">Ingresar</a></div>
 <main class="bento stag">
-<section class="b hero-b"><h1>Asociación Colombiana de <i>Talento Humano</i> y Organizacional</h1><p>Reúne a los líderes y profesionales de talento humano de Colombia.</p><a class="btn" href="login.html">Ingresar al tablero</a></section>
+<section class="b hero-b"><video class="hv" src="actho-logo.mp4" autoplay muted playsinline preload="auto" aria-label="Logo animado de ACTHO"></video><h1>Asociación Colombiana de <i>Talento Humano</i> y Organizacional</h1><p>Reúne a los líderes y profesionales de talento humano de Colombia.</p><a class="btn" href="login.html">Ingresar al tablero</a></section>
 <div class="b n"><small>Afiliados</small><strong>~500</strong><span>Empresas y profesionales</span></div>
 <div class="b r"><small>Sector</small><h3 style="color:var(--v)">Organizaciones sociales</h3><span>Colombia</span></div>
 <div class="b s"><div><small>Nuestra comunidad</small><h3 style="margin-top:6px">Líderes de gestión humana</h3></div><span style="max-width:200px;font-size:13px;opacity:.9">Gerentes y profesionales de talento humano de todo el país.</span></div>

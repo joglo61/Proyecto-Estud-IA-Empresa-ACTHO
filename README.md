@@ -2,6 +2,8 @@
 
 Proyecto del equipo **PENTA DATA** para el reto empresarial de **ACTHO** (Asociación Colombiana de Talento Humano y Organizacional), dentro del programa EstudIA · Análisis de datos · Capa 2.
 
+> **Trabajo de análisis de datos en equipo.** Este proyecto fue desarrollado en conjunto por varios colaboradores del equipo PENTA DATA: diagnóstico y mapeo de datos, depuración, análisis, definición de indicadores y construcción del tablero se trabajaron de forma colaborativa bajo metodologías ágiles.
+
 **Sitio en producción:** https://estud-ia-actho.vercel.app (requiere inicio de sesión)
 
 ![Página de inicio](docs/img/01_inicio.png)
