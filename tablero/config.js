@@ -1,2 +1,2 @@
-const SUPABASE_URL='PEGA_AQUI_LA_URL';
-const SUPABASE_KEY='PEGA_AQUI_LA_PUBLISHABLE_KEY';
+const SUPABASE_URL='https://repxuqwoimagmvmewlvx.supabase.co';
+const SUPABASE_KEY='sb_publishable_1ftlH-RQTN8i_p3W6MVNyw_P3hklUaX';
