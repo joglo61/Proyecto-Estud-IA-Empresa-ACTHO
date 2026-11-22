@@ -6,3 +6,5 @@ actualizado timestamptz not null default now()
 alter table public.tablero_datos enable row level security;
 drop policy if exists leer_autenticados on public.tablero_datos;
 create policy leer_autenticados on public.tablero_datos for select to authenticated using (true);
+grant usage on schema public to authenticated;
+grant select on public.tablero_datos to authenticated;
