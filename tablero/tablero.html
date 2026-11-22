@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es" data-protegida><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tablero ACTHO · Afiliados, participación y satisfacción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--v:#5100BB;--vd:#3E0094;--o:#FF5500;--c:#00F9FF;--m:#CC3366;--bg:#EDF7F7;--ink:#33373D;--mut:#69727D;--line:#D5E3E6;--rojo:#E0245E;--amar:#FFB020;--verde:#12A672}
+*{box-sizing:border-box}body{margin:0;font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+.hero{background:var(--v);color:#fff;padding:22px 32px 26px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-90px;top:-110px;width:330px;height:330px;border:34px solid var(--o);border-radius:50%;opacity:.9}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
+.logo{font-weight:700;font-size:34px;letter-spacing:-1px;color:#fff}.logo b{color:var(--o);font-weight:700}
+.tabs{display:flex;gap:8px}.tab{border:2px solid #fff;background:transparent;color:#fff;border-radius:50px;padding:8px 18px;font:600 13px Poppins;cursor:pointer}.tab.on{background:#fff;color:var(--v)}
+h1{margin:18px 0 4px;font-size:28px;font-weight:500;position:relative;z-index:1;max-width:760px;line-height:1.25}h1 b{font-weight:700}
+.sub{font-size:13px;color:#E6DAFB;position:relative;z-index:1}.sub em{color:var(--c);font-style:normal;font-weight:600}
+.wrap{padding:22px 32px 40px;display:flex;flex-direction:column;gap:18px;max-width:1320px;margin:0 auto}
+.filtro{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px;display:flex;flex-direction:column;gap:10px}
+.filtro label{font-size:12px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.6px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}.pill{border:2px solid var(--v);background:#fff;color:var(--v);border-radius:50px;padding:8px 16px;font:600 13px Poppins;cursor:pointer;display:flex;gap:8px;align-items:center}
+.pill span{background:var(--bg);color:var(--v);border-radius:50px;padding:1px 8px;font-size:11px}.pill.on{background:var(--v);color:#fff}.pill.on span{background:var(--c);color:var(--vd)}
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.kpi{background:#fff;border-radius:18px;padding:16px 18px;border:1px solid var(--line);display:flex;flex-direction:column;gap:2px;position:relative}
+.kpi.f{background:var(--v);color:#fff;border-color:var(--v)}.kpi small{font-size:12px;font-weight:600;color:var(--mut)}.kpi.f small{color:#D9C7FA}
+.kpi strong{font-size:34px;font-weight:700;line-height:1.15}.kpi.r strong{color:var(--rojo)}.kpi span{font-size:11.5px;color:var(--mut)}.kpi.f span{color:#D9C7FA}
+.tag{position:absolute;top:10px;right:12px;font-size:9.5px;background:var(--bg);color:var(--mut);border-radius:50px;padding:2px 8px;font-weight:600}
+.g2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:18px}.g3{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px}.g1{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.card h2{margin:0;font-size:16px;font-weight:700;color:var(--v);display:flex;justify-content:space-between;align-items:baseline;gap:10px}.card h2 i{font-style:normal;font-size:10.5px;font-weight:500;color:var(--mut)}
+.nota{margin:0;font-size:11.5px;color:var(--mut);line-height:1.55}.nota b{color:var(--ink)}
+.donut{display:flex;align-items:center;gap:22px}.ring{width:150px;height:150px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center}.ring div{width:96px;height:96px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}.ring strong{font-size:24px;font-weight:700;color:var(--v)}.ring span{font-size:11px;color:var(--mut)}
+.leg{display:flex;flex-direction:column;gap:10px;flex:1}.leg div{display:flex;align-items:center;gap:8px;font-size:13px}.leg i{width:12px;height:12px;border-radius:50%}.leg span{flex:1}
+.hb{display:grid;grid-template-columns:104px 1fr 44px;gap:10px;align-items:center;font-size:12px;margin-bottom:9px}.hb div{background:var(--bg);height:16px;border-radius:50px;overflow:hidden}.hb div i{display:block;height:100%;border-radius:50px}.hb b{text-align:right}
+.cols{display:flex;align-items:flex-end;gap:9px;height:190px}.cols div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:100%}.cols b{font-size:10.5px}.cols i{width:100%;background:var(--v);border-radius:10px 10px 0 0;display:block;min-height:3px}.cols span{font-size:10.5px;color:var(--mut)}
+table{width:100%;border-collapse:collapse}th{font-size:11px;text-align:left;color:var(--mut);padding:9px 10px;border-bottom:2px solid var(--line);font-weight:600}td{padding:10px;font-size:13px;border-bottom:1px solid var(--line)}td:first-child{font-weight:700;color:var(--v)}
+.bad{background:#FDE3EB;color:var(--rojo);border-radius:50px;padding:3px 12px;font-size:11px;font-weight:700}
+.btn{border:0;background:var(--o);color:#fff;border-radius:50px;padding:10px 20px;font:700 12px Poppins;cursor:pointer;align-self:flex-start}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.big strong{font-size:30px;color:var(--o);font-weight:700}.big div div{font-size:12px;color:var(--mut)}
+.sat{display:flex;flex-direction:column;gap:7px}.sat strong{font-size:12px;color:var(--mut)}.sr{display:grid;grid-template-columns:34px 1fr 36px;gap:8px;align-items:center;font-size:12px}.sr div{background:var(--bg);height:12px;border-radius:50px}.sr div i{display:block;height:100%;background:var(--m);border-radius:50px}
+.info{background:var(--v);color:#fff;border-radius:18px;padding:16px 22px;font-size:12.5px;line-height:1.65}.info b{color:var(--c)}
+.inp{border:2px solid var(--line);border-radius:50px;padding:8px 14px;font:500 13px Poppins;width:100%}.inp:focus{outline:0;border-color:var(--v)}.aviso{font-size:12px;color:var(--vd);background:#fff;border:1px dashed var(--v);border-radius:12px;padding:8px 14px}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.g3,.g1{grid-template-columns:1fr}}
+
+.bar{background:var(--vd);color:#D9C7FA;font-size:12.5px;display:flex;gap:18px;justify-content:flex-end;align-items:center;padding:8px 32px}
+.bar a{color:#fff;text-decoration:none;font-weight:600}.bar a:first-child{margin-right:auto}.bar b{color:#fff}
+</style></head><body><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="auth.js"></script>
+<div class="bar"><a href="tableros.html">← Tableros</a><span>Sesión: <b id="usr"></b></span><a href="#" onclick="salir();return false">Salir</a></div>
+<div class="hero"><div class="top"><a href="index.html" class="logo" style="text-decoration:none;color:#fff">ac<b>th</b>o</a><div class="tabs" id="tabs"></div></div>
+<h1>Tablero de <b>afiliados</b>, participación y satisfacción</h1><div class="sub" id="sub"></div></div>
+<div class="wrap">
+<div class="filtro"><label>Tipo de cliente</label><div class="pills" id="pills"></div><label style="margin-top:6px">Ejecutiva de cuenta</label><select id="kamsel" class="inp" style="max-width:300px" onchange="kam=this.value;render()"></select></div>
+<div class="aviso" id="aviso" style="display:none"></div>
+<div class="kpis" id="kpis"></div>
+<div id="vA" style="display:flex;flex-direction:column;gap:18px"><div class="g2"><div class="card" id="c_sem"></div><div class="card" id="c_venc"></div></div>
+<div class="g3"><div class="card" id="c_mes"></div><div class="card" id="c_tabla"></div></div>
+<div class="g1" id="glob"></div>
+</div><div id="vB" style="display:none;flex-direction:column;gap:18px"></div>
+<p class="nota">Prototipo de PENTA DATA con datos anonimizados de ACTHO al 21 nov 2026. Semáforo: rojo = vence en 90 días o menos (o ya venció) y sin asistencia en 6 meses; amarillo = una de las dos; verde = ninguna. Las inscripciones no confirman asistencia real.</p>
+</div>
+<script type="text/plain" id="app">
+const TIPOS=['Todos','Conectar (Estándar)','Crecer (Premium)','Liderar (Elite)','Personal'];
+const BK=['Ya vencida','0 a 30 días','31 a 60 días','61 a 90 días','Más de 90 días','Sin fecha'];
+const BC=['#E0245E','#FFB020','#FFB020','#FFB020','#12A672','#9AA3AD'];
+const MES=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct'];
+const _p=new URLSearchParams(location.search).get('v');let vista=['dir','ev','com','fin'].includes(_p)?_p:'dir',tipo='Todos',kam='Todas';
+const f=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+const pc=(a,b)=>b?Math.round(a/b*1000)/10:0;
+const fmt=x=>String(x).replace('.',',');
+function nombre(t){return t==='Todos'?'todos los tipos':t}
+function render(){
+ const dr=D[tipo],o=kam==='Todas'?dr:dr.kams[kam];
+ document.getElementById('tabs').innerHTML=[['dir','Resumen'],['ev','Eventos'],['com','Comunicaciones'],['fin','Finanzas']].map(([k,l])=>`<button class="tab ${vista===k?'on':''}" onclick="vista='${k}';render()">${l}</button>`).join('');
+ const NV={dir:'Resumen · '+(kam==='Todas'?'cartera completa':'cartera de '+kam),ev:'Eventos · participación 2026',com:'Comunicaciones · a quién escribir y sobre qué',fin:'Finanzas · vencimientos y renovaciones'};document.getElementById('sub').innerHTML=`Vista <em>${NV[vista]}</em> · ${nombre(tipo)}`;
+ const B=vista==='ev'||vista==='com'||vista==='fin';document.getElementById('vA').style.display=B?'none':'flex';document.getElementById('vB').style.display=B?'flex':'none';
+ document.getElementById('kamsel').innerHTML=Object.keys(D.Todos.kams).map(k=>`<option ${k===kam?'selected':''} value="${k}">${k==='Todas'?'Todas las ejecutivas':k}</option>`).join('');document.getElementById('kamsel').disabled=B;
+ document.getElementById('pills').innerHTML=TIPOS.map(t=>{const n=kam==='Todas'?D[t].n:D[t].kams[kam].n;return `<button class="pill ${tipo===t?'on':''}" onclick="tipo='${t}';render()">${t}<span>${n}</span></button>`}).join('');
+ const av=document.getElementById('aviso');if(o.n<10){av.style.display='block';av.textContent='Muestra pequeña ('+o.n+' empresas): los porcentajes son poco estables. Conviene leerlos con cuidado.'}else av.style.display='none';
+ const k=(l,v,s,c='')=>`<div class="kpi ${c}"><small>${l}</small><strong>${v}</strong><span>${s}</span></div>`;
+ const g=(l,v,s)=>`<div class="kpi"><span class="tag">no filtra</span><small>${l}</small><strong>${v}</strong><span>${s}</span></div>`;
+ document.getElementById('kpis').innerHTML=k('Afiliados vigentes',f(o.n),kam==='Todas'?'Activo, en gracia o por expirar':'Cartera de '+kam,'f')+k('En semáforo rojo',f(o.rojo),pc(o.rojo,o.n)+' % de la cartera','r')+k('Vencen en 90 días',f(o.v90),f(o.vpas)+' más ya vencidas')+k('Asistieron en 6 meses',f(o.a6),pc(o.a6,o.n)+' % de la cartera')+g('Satisfacción 2026','4,78','de 5 · 304 respuestas')+g('NPS post-evento','85','41 respuestas');
+ const tot=o.n||1,r=o.rojo/tot*100,a=r+o.amar/tot*100;
+ document.getElementById('c_sem').innerHTML=`<h2>Semáforo de riesgo<i>${nombre(tipo)}</i></h2><div class="donut"><div class="ring" style="background:conic-gradient(var(--rojo) 0 ${r}%,var(--amar) ${r}% ${a}%,var(--verde) ${a}% 100%)"><div><strong>${f(o.n)}</strong><span>vigentes</span></div></div><div class="leg"><div><i style="background:var(--rojo)"></i><span>Rojo</span><b>${o.rojo}</b></div><div><i style="background:var(--amar)"></i><span>Amarillo</span><b>${o.amar}</b></div><div><i style="background:var(--verde)"></i><span>Verde</span><b>${o.verde}</b></div></div></div><p class="nota">Falta sumar satisfacción por empresa cuando haya respuestas con código de empresa.</p>`;
+ const mx=Math.max(...o.b,1);
+ document.getElementById('c_venc').innerHTML=`<h2>Vencimientos de membresía<i>${nombre(tipo)}</i></h2><div>${BK.map((l,i)=>`<div class="hb"><span>${l}</span><div><i style="width:${Math.max(o.b[i]/mx*100,o.b[i]?2:0)}%;background:${BC[i]}"></i></div><b>${o.b[i]}</b></div>`).join('')}</div><p class="nota">Muchas membresías vencen el <b>31 de diciembre de 2026</b>. Puede ser un corte común y conviene confirmarlo con ACTHO.</p>`;
+ const mm=Math.max(...dr.mes,1),ms=vista==='dir'?dr.mes:dr.mes;
+ document.getElementById('c_mes').innerHTML=`<h2>Inscripciones por mes, 2026<i>${nombre(tipo)}${kam!=='Todas'?' · cartera completa':''}</i></h2><div class="cols">${ms.map((v,i)=>`<div><b>${v}</b><i style="height:${v/mm*150}px"></i><span>${MES[i]}</span></div>`).join('')}</div><p class="nota">Inscripciones únicas por evento y persona de empresas ${tipo==='Todos'?'afiliadas vigentes y no vigentes':'de este tipo'}. No confirman asistencia real.</p>`;
+ const rj=o.rojas;
+ document.getElementById('c_tabla').innerHTML=`<h2>Empresas a contactar primero<i>${rj.length} de ${o.rojo} en rojo</i></h2>${rj.length?`<div style="overflow-x:auto"><table><thead><tr><th>Empresa</th><th>Tipo</th><th>Vence</th><th>Último evento</th><th></th></tr></thead><tbody>${rj.map(r=>`<tr><td>${r[0]}</td><td>${r[1].split(' ')[0]}</td><td>${r[2]}</td><td>${r[4]}</td><td><span class="bad">Rojo</span></td></tr>`).join('')}</tbody></table></div>`:'<p class="nota"><b>Ninguna empresa en rojo</b> en este tipo de cliente.</p>'}<button class="btn">Exportar lista a Excel</button>`;
+ const na=D._noafil;
+ document.getElementById('glob').innerHTML=`<div class="card"><h2>Satisfacción 2026 por mes<i>no filtra por tipo</i></h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">${sat('Presencial (169)',[['Abr',4.88],['May',4.67],['Jun',4.61],['Sep',4.79]])}${sat('Virtual (135)',[['Ene',4.90],['Mar',4.70],['Abr',4.85],['Jun',4.70],['Jul',4.45],['Ago',4.77]])}</div><p class="nota">Las encuestas casi no traen código de empresa, por eso no se pueden separar por tipo de cliente. Las notas varían poco (4,4 a 4,9).</p></div><div class="card"><h2>Asistentes fuera del CRM<i>no filtra por tipo</i></h2><div class="big"><div><strong>${na.emp}</strong><div>empresas</div></div><div><strong>${na.per}</strong><div>personas</div></div><div><strong>${na.insc}</strong><div>inscripciones</div></div></div><p class="nota">Asistieron a eventos y no aparecen en el CRM. Son la lista de prospectos para el equipo comercial.</p></div>`;
+ if(B){renderB(dr);return}
+}
+
+const TT=['Conectar (Estándar)','Crecer (Premium)','Liderar (Elite)','Personal'];
+const TAR={};
+function hb(l,v,mx,c){return `<div class="hb"><span>${l}</span><div><i style="width:${Math.max(v/(mx||1)*100,v?2:0)}%;background:${c}"></i></div><b>${f(v)}</b></div>`}
+function kp(l,v,s,c=''){return `<div class="kpi ${c}"><small>${l}</small><strong>${v}</strong><span>${s}</span></div>`}
+function kg(l,v,s){return `<div class="kpi"><span class="tag">no filtra</span><small>${l}</small><strong>${v}</strong><span>${s}</span></div>`}
+function card(t,i,b){return `<div class="card"><h2>${t}<i>${i}</i></h2>${b}</div>`}
+function renderB(dr){
+ const K=document.getElementById('kpis'),V=document.getElementById('vB'),pe=X.pe[tipo];
+ if(vista==='ev'){
+  const evs=X.ev.map(e=>({...e,v:e.t[tipo]})).sort((a,b)=>b.v-a.v),tot=X.ev.reduce((s,e)=>s+e.t[tipo],0),L=X.lin[tipo],M=X.mod[tipo];
+  K.innerHTML=kp('Eventos 2026',X.ev.length,'34 hojas, una sin datos','f')+kp('Inscripciones',f(tot),'únicas por evento y persona')+kp('Personas únicas',f(pe.per),'de '+f(pe.emp)+' empresas')+kp('Personas recurrentes',f(pe.rec),'3 o más eventos')+kg('Satisfacción 2026','4,78','de 5 · 304 respuestas')+kg('NPS post-evento','85','41 respuestas');
+  const mxL=Math.max(...Object.values(L),1),mxM=Math.max(...Object.values(M),1),cl={Anticipar:'#5100BB','Evento grande':'#FF5500',Foro:'#CC3366',Pares:'#00B8BF'};
+  V.innerHTML='<div class="g1">'+card('Inscripciones por línea de oferta 2027',nombre(tipo),Object.entries(L).sort((a,b)=>b[1]-a[1]).map(([k,x])=>hb(k,x,mxL,cl[k]||'#5100BB')).join('')+'<p class="nota">Homologación de los eventos 2026 con las líneas 2027, validada por ACTHO.</p>')+card('Modalidad',nombre(tipo),Object.entries(M).sort((a,b)=>b[1]-a[1]).map(([k,x])=>hb(k,x,mxM,'#5100BB')).join('')+'<p class="nota">La modalidad es inferida, no viene del sistema de registro.</p>')+'</div>'+card('Eventos con más inscripciones',nombre(tipo),`<div style="overflow-x:auto"><table><thead><tr><th>Fecha</th><th>Evento</th><th>Línea</th><th>Modalidad</th><th style="text-align:right">Inscritos</th></tr></thead><tbody>${evs.slice(0,8).map(e=>`<tr><td style="color:var(--ink);font-weight:600">${e.f}</td><td style="color:var(--ink);font-weight:400">${e.nom.slice(0,70)}</td><td>${e.lin}</td><td>${e.mod}</td><td style="text-align:right"><b>${e.v}</b></td></tr>`).join('')}</tbody></table></div><p class="nota">Las hojas listan inscritos. Falta confirmar si hay asistencia real.</p>`);
+ }
+ if(vista==='com'){
+  const E=X.enc[tipo],al=Object.values(X.altas.Todos).reduce((a,b)=>a+b,0),pcS=E.n?Math.round(E.si/E.n*1000)/10:0;
+  K.innerHTML=kp('Personas a las que se puede escribir',f(pe.per),'inscritas a eventos 2026','f')+kp('Recurrentes',f(pe.rec),'3 o más eventos')+kp('Aceptan recibir información',fmt(pcS)+' %',E.si+' de '+E.n+' respuestas')+kp('Piden tema',f(E.conTema),'respuestas con tema escrito')+kp('En rojo',f(dr.rojo),'empresas por contactar','r')+kg('Fuera del CRM',f(X_NA.emp),'empresas que asistieron');
+  const T=Object.entries(E.tem).sort((a,b)=>b[1]-a[1]),mx=Math.max(...T.map(x=>x[1]),1);
+  const seg=[['En semáforo rojo',dr.rojo,'Llamada de la ejecutiva'],['Vencen en 90 días',dr.v90,'Correo de renovación'],['Sin asistir en 6 meses',dr.n-dr.a6,'Invitación a evento'],['Personas recurrentes',pe.rec,'Trato directo'],['Aceptan información',E.si,'Boletín']];
+  V.innerHTML='<div class="g1">'+card('Temas que piden',nombre(tipo)+' · '+E.n+' resp.',T.map(([k,x])=>hb(k,x,mx,'#CC3366')).join('')+'<p class="nota">Conteo por palabras clave sobre el texto libre. Una respuesta puede sumar a varios temas.</p>')+card('Segmentos para comunicar',nombre(tipo),`<table><thead><tr><th>Segmento</th><th style="text-align:right">Cantidad</th><th>Acción</th></tr></thead><tbody>${seg.map(s=>`<tr><td style="color:var(--ink);font-weight:600">${s[0]}</td><td style="text-align:right"><b>${f(s[1])}</b></td><td style="color:var(--ink);font-weight:400">${s[2]}</td></tr>`).join('')}</tbody></table><p class="nota">Las cantidades de empresas y de personas no son comparables entre sí.</p>`)+'</div>';
+  if(E.n<30)V.insertAdjacentHTML('afterbegin','<div class="aviso">Pocas respuestas de encuesta para este tipo ('+E.n+'). Los temas son orientativos.</div>');
+ }
+ if(vista==='fin'){
+  const VM=X.venm[tipo],ks=Object.keys(VM).filter(k=>k>='2026-09'),n26=ks.filter(k=>k<='2026-12').reduce((s,k)=>s+VM[k],0),n27=ks.filter(k=>k>='2027-01').reduce((s,k)=>s+VM[k],0),mx=Math.max(...ks.map(k=>VM[k]),1);
+  const RE=X.reno[tipo],AL=X.altas[tipo],sr=Object.values(RE).reduce((a,b)=>a+b,0),sa=Object.values(AL).reduce((a,b)=>a+b,0);
+  const MN=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  K.innerHTML=kp('Membresías vigentes',f(dr.n),'Activo, en gracia o por expirar','f')+kp('Vencen hasta dic 2026',f(n26),'desde sep 2026, incluye vencidas')+kp('Vencen en 2027',f(n27),'ene a dic 2027')+kp('En semáforo rojo',f(dr.rojo),'renovación en riesgo','r')+kp('Renovaciones, 2 meses',sr,'facturadas sep y oct')+kp('Afiliaciones nuevas, 2 meses',sa,'agosto a octubre');
+  const sc=TT.filter(t=>tipo==='Todos'||t===tipo);
+  V.innerHTML=card('Membresías que vencen por mes',nombre(tipo),`<div class="cols">${ks.map(k=>`<div><b>${VM[k]}</b><i style="height:${VM[k]/mx*150}px;background:${k<'2026-11'?'#E0245E':k<='2026-12'?'#FF5500':'#5100BB'}"></i><span>${MN[+k.slice(5)-1]} ${k.slice(2,4)}</span></div>`).join('')}</div><p class="nota">Rojo: ya vencidas. Naranja: vencen antes de fin de año. Violeta: 2027. El 31 de diciembre concentra casi todas las de 2026.</p>`)+'<div class="g1">'+card('Altas y renovaciones por mes','Zoho, generado el 13 nov',['Agosto','Septiembre','Octubre'].map(m=>hb('Altas '+m.slice(0,3),AL[m]||0,10,'#12A672')+hb('Renov. '+m.slice(0,3),RE[m]||0,10,'#5100BB')).join('')+'<p class="nota">Solo cubre los últimos 2 meses de los informes de Zoho.</p>')+card('Ingreso en juego (calculadora)','tú pones la tarifa',`<p class="nota">ACTHO eliminó los importes de los datos. Escribe la tarifa anual en pesos y se calcula con las empresas en rojo.</p>${sc.map(t=>`<div style="display:grid;grid-template-columns:1fr 150px;gap:10px;align-items:center;font-size:12.5px"><span>${t} · ${D[t].rojo} en rojo</span><input class="inp" type="number" min="0" placeholder="Tarifa anual" value="${TAR[t]||''}" oninput="TAR['${t}']=+this.value;calc()"></div>`).join('')}<div style="font-size:12px;color:var(--mut)">Ingreso anual en riesgo</div><strong id="riesgo" style="font-size:26px;color:var(--rojo)">—</strong>`)+'</div>';
+  calc();
+ }
+}
+function calc(){const el=document.getElementById('riesgo');if(!el)return;const sc=TT.filter(t=>tipo==='Todos'||t===tipo);const s=sc.reduce((a,t)=>a+(D[t].rojo*(TAR[t]||0)),0);el.textContent=s?'$ '+f(Math.round(s))+' COP':'Escribe una tarifa'}
+const X_NA=D._noafil;
+function sat(t,rows){return `<div class="sat"><strong>${t}</strong>${rows.map(([l,v])=>`<div class="sr"><span>${l}</span><div><i style="width:${(v-4)*100}%"></i></div><b>${fmt(v)}</b></div>`).join('')}</div>`}
+render();
+</script><script>cargarApp()</script></body></html>

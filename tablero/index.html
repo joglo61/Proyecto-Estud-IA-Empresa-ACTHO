@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACTHO · Tableros de afiliados</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+.top{max-width:1100px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between}
+.top .logo{color:var(--v)}.top .logo b{color:var(--o)}
+.top .btn{padding:10px 24px}
+.bento{max-width:1100px;margin:0 auto;padding:0 24px 24px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:16px;
+grid-template-areas:"hero hero n r" "hero hero s s" "hero hero ev c" "res evt com com" "res fin fin note"}
+.b{border-radius:28px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.b small{font-size:12px;font-weight:600;opacity:.75}.b strong{font-size:40px;line-height:1.1;font-weight:700}.b span{font-size:12px;opacity:.75}
+.b h3{margin:0 0 6px;font-size:20px;font-weight:700}.b p{margin:0;font-size:13px;opacity:.8}
+.b em{font-style:normal;font-size:13px;font-weight:600}
+a.b{transition:transform .15s}a.b:hover{transform:translateY(-3px)}
+.hero-b{grid-area:hero;background:var(--v);color:#fff;border:0;padding:34px;justify-content:flex-end}
+.hero-b:after{content:"";position:absolute;right:-80px;top:-100px;width:300px;height:300px;border:32px solid var(--o);border-radius:50%}
+.hero-b h1{font-size:34px;line-height:1.15;margin:0 0 12px;position:relative;z-index:1}.hero-b h1 i{font-style:normal;color:var(--c)}
+.hero-b p{font-size:14px;color:#E6DAFB;margin:0 0 22px;max-width:420px;opacity:1;position:relative;z-index:1}
+.hero-b .btn{align-self:flex-start;position:relative;z-index:1}
+.n{grid-area:n}.r{grid-area:r}
+.s{grid-area:s;background:var(--o);color:#fff;border:0;flex-direction:row;align-items:center;justify-content:space-between}.s strong{font-size:56px}
+.ev{grid-area:ev;background:var(--c);border:0}.c{grid-area:c}
+.res{grid-area:res;background:var(--vd);color:#fff;border:0}
+.evt{grid-area:evt}.com{grid-area:com;background:#F3E9FF;border:0;color:var(--v)}
+.fin{grid-area:fin;background:var(--m);color:#fff;border:0}
+.res h3,.evt h3{color:inherit}.evt h3{color:var(--v)}.res em{color:var(--c)}.evt em,.com em{color:var(--o)}.fin em{color:#fff}
+.note{grid-area:note;background:transparent;border:1.5px dashed var(--line);font-size:11.5px;color:var(--mut);justify-content:center}
+@media(max-width:860px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:140px;grid-template-areas:"hero hero" "hero hero" "n r" "s s" "ev c" "res evt" "com com" "fin fin" "note note"}.hero-b h1{font-size:28px}.hero-b:after{width:200px;height:200px;right:-60px;top:-70px;border-width:22px}.bento{grid-auto-rows:minmax(150px,auto)}.b h3{font-size:15px;overflow-wrap:break-word;hyphens:auto}.s{flex-direction:column;align-items:flex-start;gap:8px}.s strong{font-size:44px}}
+</style></head><body>
+<div class="top"><a class="logo" href="index.html">ac<b>th</b>o</a><a class="btn" href="login.html">Ingresar</a></div>
+<main class="bento">
+<section class="b hero-b"><h1>Asociación Colombiana de <i>Talento Humano</i> y Organizacional</h1><p>Reúne a los líderes y profesionales de talento humano de Colombia.</p><a class="btn" href="login.html">Ingresar al tablero</a></section>
+<div class="b n"><small>Afiliados</small><strong>~500</strong><span>Empresas y profesionales</span></div>
+<div class="b r"><small>Sector</small><h3 style="color:var(--v)">Organizaciones sociales</h3><span>Colombia</span></div>
+<div class="b s"><div><small>Nuestra comunidad</small><h3 style="margin-top:6px">Líderes de gestión humana</h3></div><span style="max-width:200px;font-size:13px;opacity:.9">Gerentes y profesionales de talento humano de todo el país.</span></div>
+<div class="b ev"><small>Formación</small><h3>Talleres, webinars y eventos</h3></div>
+<div class="b c"><small>Actualización</small><h3>Comunidades y contenidos</h3></div>
+<div class="b res"><div><h3>Conexión</h3><p>Espacios de encuentro entre gerentes de talento humano.</p></div><em>Red de líderes</em></div>
+<div class="b evt"><div><h3>Quiénes la usan</h3><p>Áreas de gestión humana de las empresas afiliadas.</p></div></div>
+<div class="b com"><div><h3>Prioridades 2027</h3><p>Retención de afiliados y satisfacción medida con NPS.</p></div></div>
+<a class="b fin" href="https://actho.org" target="_blank" rel="noopener"><div><h3>Conoce más</h3><p>Afiliación, experiencias y contenidos en actho.org.</p></div><em>actho.org →</em></a>
+<div class="b note">Prototipo de PENTA DATA con datos anonimizados de ACTHO al 21 nov 2026.</div>
+</main></body></html>

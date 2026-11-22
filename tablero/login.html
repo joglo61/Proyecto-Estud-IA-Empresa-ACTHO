@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ingresar · ACTHO</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="auth.js"></script>
+<style>
+body{min-height:100vh;display:flex;flex-direction:column}.hero{flex:1;display:flex;flex-direction:column}
+.c{flex:1;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;z-index:1}
+.card{width:100%;max-width:380px;padding:30px;color:var(--ink)}
+h1{font-size:22px;margin:0 0 4px;color:var(--v)}p{font-size:13px;color:var(--mut);margin:0 0 20px}
+label{display:block;font-size:12px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.6px;margin:14px 0 6px}
+input{width:100%;font:inherit;font-size:14px;padding:11px 14px;border:1px solid var(--line);border-radius:12px;outline:none}
+input:focus{border-color:var(--v)}
+.btn{width:100%;margin-top:22px}.err{color:#E0245E;font-size:12.5px;margin-top:12px;min-height:18px}
+</style></head><body>
+<div class="hero"><div class="nav"><a class="logo" href="index.html">ac<b>th</b>o</a></div>
+<div class="c"><form class="card" id="f"><h1>Ingresar</h1><p>Accede a los tableros de afiliados.</p>
+<label for="u">Correo</label><input id="u" type="email" autocomplete="username" required>
+<label for="p">Contraseña</label><input id="p" type="password" autocomplete="current-password" required>
+<button class="btn" type="submit">Entrar</button><div class="err" id="e"></div></form></div></div>
+<script>
+sb.auth.getSession().then(({data})=>{if(data.session)location.replace('tableros.html')});
+document.getElementById('f').onsubmit=async e=>{e.preventDefault();
+if(await entrar(u.value,p.value))location.href='tableros.html';else{document.getElementById('e').textContent='Usuario o contraseña incorrectos.'}}
+</script></body></html>

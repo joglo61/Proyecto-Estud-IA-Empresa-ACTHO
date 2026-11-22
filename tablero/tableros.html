@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es" data-protegida><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tableros · ACTHO</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="auth.js"></script>
+<style>
+.hero{padding-bottom:70px}.t{position:relative;z-index:1;padding:6px 0 0}.t h1{font-size:30px;margin:0 0 6px}.t h1 b{color:var(--c)}.t p{margin:0;color:#E6DAFB;font-size:14px}
+.nav a.s{color:#fff;font-size:13px;font-weight:600;text-decoration:none}
+.g{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:-40px;position:relative;z-index:2}
+a.card{text-decoration:none;color:inherit;display:block;transition:.15s;padding:26px}a.card:hover{border-color:var(--v);transform:translateY(-2px)}
+.card h2{margin:0 0 6px;font-size:20px;color:var(--v)}.card p{margin:0 0 16px;font-size:13.5px;color:var(--mut)}
+.card .k{display:flex;gap:26px;margin-bottom:16px}.k div small{display:block;font-size:12px;font-weight:600;color:var(--mut)}.k div strong{font-size:28px;line-height:1.2}
+.card em{font-style:normal;font-size:13px;font-weight:600;color:var(--o)}
+@media(max-width:700px){.g{grid-template-columns:1fr}}
+</style></head><body>
+<div class="hero"><div class="nav"><a class="logo" href="index.html">ac<b>th</b>o</a><span><span style="font-size:13px;color:#D9C7FA;margin-right:18px">Sesión: <b id="usr" style="color:#fff"></b></span><a class="s" href="#" onclick="salir();return false">Salir</a></span></div>
+<div class="wrap t"><h1>Elige un <b>tablero</b></h1><p>Datos anonimizados de ACTHO al 21 nov 2026.</p></div></div>
+<div class="wrap"><div class="g">
+<a class="card" href="tablero.html?v=dir"><h2>Resumen</h2><p>Semáforo de riesgo, vencimientos y empresas a contactar primero.</p><div class="k"><div><small>Vigentes</small><strong>474</strong></div><div><small>En rojo</small><strong style="color:#E0245E">146</strong></div></div><em>Abrir →</em></a>
+<a class="card" href="tablero.html?v=ev"><h2>Eventos</h2><p>Inscripciones por modalidad y línea de oferta; eventos con más inscripciones.</p><div class="k"><div><small>Eventos 2026</small><strong>33</strong></div><div><small>Inscripciones</small><strong>3.318</strong></div></div><em>Abrir →</em></a>
+<a class="card" href="tablero.html?v=com"><h2>Comunicaciones</h2><p>A quién escribir, con qué acción y sobre qué temas.</p><div class="k"><div><small>Personas</small><strong>2.573</strong></div><div><small>Recurrentes</small><strong>157</strong></div></div><em>Abrir →</em></a>
+<a class="card" href="tablero.html?v=fin"><h2>Finanzas</h2><p>Vencimientos por mes, renovaciones e ingreso anual en riesgo.</p><div class="k"><div><small>Vencen en 2027</small><strong>164</strong></div><div><small>Renovaciones, 2 meses</small><strong>14</strong></div></div><em>Abrir →</em></a>
+</div></div>
+</body></html>
