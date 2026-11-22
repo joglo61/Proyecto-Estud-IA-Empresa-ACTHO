@@ -15,7 +15,7 @@ a.card{text-decoration:none;color:inherit;display:block;transition:.15s;padding:
 </style></head><body>
 <div class="hero"><div class="nav"><a class="logo" href="index.html">ac<b>th</b>o</a><span><span style="font-size:13px;color:#D9C7FA;margin-right:18px">Sesión: <b id="usr" style="color:#fff"></b></span><a class="s" href="#" onclick="salir();return false">Salir</a></span></div>
 <div class="wrap t"><h1>Elige un <b>tablero</b></h1><p>Datos anonimizados de ACTHO al 21 nov 2026.</p></div></div>
-<div class="wrap"><div class="g">
+<div class="wrap"><div class="g stag">
 <a class="card" href="tablero.html?v=dir"><h2>Resumen</h2><p>Semáforo de riesgo, vencimientos y empresas a contactar primero.</p><div class="k"><div><small>Vigentes</small><strong data-k="n">—</strong></div><div><small>En rojo</small><strong style="color:#E0245E" data-k="rojo">—</strong></div></div><em>Abrir →</em></a>
 <a class="card" href="tablero.html?v=ev"><h2>Eventos</h2><p>Inscripciones por modalidad y línea de oferta; eventos con más inscripciones.</p><div class="k"><div><small>Eventos 2026</small><strong data-k="ev">—</strong></div><div><small>Inscripciones</small><strong data-k="insc">—</strong></div></div><em>Abrir →</em></a>
 <a class="card" href="tablero.html?v=com"><h2>Comunicaciones</h2><p>A quién escribir, con qué acción y sobre qué temas.</p><div class="k"><div><small>Personas</small><strong data-k="per">—</strong></div><div><small>Recurrentes</small><strong data-k="rec">—</strong></div></div><em>Abrir →</em></a>
@@ -25,6 +25,6 @@ a.card{text-decoration:none;color:inherit;display:block;transition:.15s;padding:
 guardia().then(async s=>{if(!s)return;const{data}=await sb.from('tablero_datos').select('clave,datos');if(!data)return;const o={};data.forEach(r=>{o[r.clave]=r.datos});const D=o.D,X=o.X;if(!D||!X)return;
 const f=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');const sum=a=>a.reduce((x,y)=>x+y,0);
 const v={n:D.Todos.n,rojo:D.Todos.rojo,ev:X.ev.length,insc:sum(X.ev.map(e=>e.t.Todos)),per:X.pe.Todos.per,rec:X.pe.Todos.rec,v27:sum(Object.entries(X.venm.Todos).filter(([k])=>k>='2027-01').map(e=>e[1])),ren:sum(Object.values(X.reno.Todos))};
-document.querySelectorAll('[data-k]').forEach(e=>{e.textContent=f(v[e.dataset.k])})});
+document.querySelectorAll('[data-k]').forEach(e=>{contar(e,f(v[e.dataset.k]))})});
 </script>
 </body></html>

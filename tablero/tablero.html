@@ -41,6 +41,14 @@ table{width:100%;border-collapse:collapse}th{font-size:11px;text-align:left;colo
 
 .bar{background:var(--vd);color:#D9C7FA;font-size:12.5px;display:flex;gap:18px;justify-content:flex-end;align-items:center;padding:8px 32px}
 .bar a{color:#fff;text-decoration:none;font-weight:600}.bar a:first-child{margin-right:auto}.bar b{color:#fff}
+
+@keyframes gx{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes gy{from{transform:scaleY(0)}to{transform:scaleY(1)}}@keyframes pop{from{transform:scale(.6) rotate(-90deg);opacity:0}to{transform:none;opacity:1}}@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hb div i,.sr div i{transform-origin:left;animation:gx .9s cubic-bezier(.2,.7,.2,1) backwards}
+.cols i{transform-origin:bottom;animation:gy .9s cubic-bezier(.2,.7,.2,1) backwards}
+.ring{animation:pop 1s cubic-bezier(.2,.7,.2,1) backwards}
+.kpis>*{animation:up .5s cubic-bezier(.2,.7,.2,1) backwards}.kpis>*:nth-child(2){animation-delay:60ms}.kpis>*:nth-child(3){animation-delay:120ms}.kpis>*:nth-child(4){animation-delay:180ms}.kpis>*:nth-child(5){animation-delay:240ms}.kpis>*:nth-child(6){animation-delay:300ms}
+.hero:after{animation:up 1.2s backwards}
+@media(prefers-reduced-motion:reduce){*,*:after{animation:none!important;transition:none!important}}
 </style></head><body><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="auth.js"></script>
 <div class="bar"><a href="tableros.html">← Tableros</a><span>Sesión: <b id="usr"></b></span><a href="#" onclick="salir();return false">Salir</a></div>
 <div class="hero"><div class="top"><a href="index.html" class="logo" style="text-decoration:none;color:#fff">ac<b>th</b>o</a><div class="tabs" id="tabs"></div></div>
@@ -124,5 +132,6 @@ function renderB(dr){
 function calc(){const el=document.getElementById('riesgo');if(!el)return;const sc=TT.filter(t=>tipo==='Todos'||t===tipo);const s=sc.reduce((a,t)=>a+(D[t].rojo*(TAR[t]||0)),0);el.textContent=s?'$ '+f(Math.round(s))+' COP':'Escribe una tarifa'}
 const X_NA=D._noafil;
 function sat(t,rows){return `<div class="sat"><strong>${t}</strong>${rows.map(([l,v])=>`<div class="sr"><span>${l}</span><div><i style="width:${(v-4)*100}%"></i></div><b>${fmt(v)}</b></div>`).join('')}</div>`}
+const _r=render;render=function(){_r();document.querySelectorAll('.kpi strong,.ring strong').forEach(e=>contar(e,e.textContent))};
 render();
 </script><script>cargarApp()</script></body></html>

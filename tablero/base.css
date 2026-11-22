@@ -10,3 +10,10 @@
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
 .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
 .nota{font-size:11.5px;color:var(--mut)}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes anillo{from{opacity:0;transform:translate(60px,-60px) scale(.8)}to{opacity:.9;transform:none}}
+.stag>*,.card{animation:up .6s cubic-bezier(.2,.7,.2,1) backwards}
+.stag>*:nth-child(1){animation-delay:70ms}.stag>*:nth-child(2){animation-delay:140ms}.stag>*:nth-child(3){animation-delay:210ms}.stag>*:nth-child(4){animation-delay:280ms}.stag>*:nth-child(5){animation-delay:350ms}.stag>*:nth-child(6){animation-delay:420ms}.stag>*:nth-child(7){animation-delay:490ms}.stag>*:nth-child(8){animation-delay:560ms}.stag>*:nth-child(9){animation-delay:630ms}.stag>*:nth-child(10){animation-delay:700ms}.stag>*:nth-child(11){animation-delay:770ms}.stag>*:nth-child(12){animation-delay:840ms}.stag>*:nth-child(13){animation-delay:910ms}.stag>*:nth-child(14){animation-delay:980ms}.stag>*:nth-child(15){animation-delay:1050ms}
+.hero:after,.hero-b:after{animation:anillo 1.2s cubic-bezier(.2,.7,.2,1) backwards}
+a.b,a.card{transition:transform .2s,box-shadow .2s}a.b:hover,a.card:hover{box-shadow:0 14px 30px rgba(81,0,187,.18)}
+@media(prefers-reduced-motion:reduce){*,*:after{animation:none!important;transition:none!important}}
