@@ -22,5 +22,6 @@ input:focus{border-color:var(--v)}
 sb.auth.getSession().then(({data})=>{if(data.session)location.replace('tableros.html')});
 document.getElementById('f').onsubmit=async e=>{e.preventDefault();
 if(await entrar(u.value,p.value))location.href='tableros.html';else{document.getElementById('e').textContent='Usuario o contraseña incorrectos.'}}
+if(/e=cargo/.test(location.search))document.getElementById('e').textContent='Tu cuenta no tiene un cargo asignado. Pide acceso al administrador.';
 document.getElementById('demo').onclick=async()=>{if(await entrar('evaluador@actho-demo.com','EstudIA-Demo-2026'))location.href='tableros.html';else document.getElementById('e').textContent='El acceso de evaluador no está disponible.'};
 </script></body></html>

@@ -94,6 +94,17 @@ No hay historial suficiente para un modelo predictivo, por eso se usa una regla 
 
 El sitio pide inicio de sesión (Supabase Auth). Las cuentas se crean manualmente y el registro abierto está desactivado. Para la revisión del proyecto, el botón **Entrar como evaluador** abre el sitio con una cuenta de solo lectura.
 
+**Acceso por cargo.** Cada cuenta tiene un cargo y solo ve los tableros que le corresponden. El permiso se aplica en la base de datos (Row Level Security): los datos de un tablero no se descargan si el cargo no lo tiene, aunque se intente abrir la dirección a mano.
+
+| Cargo | Tableros |
+|---|---|
+| Dirección Ejecutiva y Junta Directiva | Resumen, Eventos, Comunicaciones y Finanzas |
+| Comercial / ejecutivos de cuenta | Resumen y Comunicaciones |
+| Experiencias y eventos | Eventos y Comunicaciones |
+| Contabilidad | Finanzas |
+
+Para crear una cuenta: en Supabase → Authentication → Add user, y luego en el SQL Editor `select public.asignar_cargo('correo@empresa.com','contabilidad');`. Los cargos válidos son `direccion`, `junta`, `comercial`, `eventos` y `contabilidad`. La cuenta de evaluador tiene cargo `direccion`.
+
 ![Login](docs/img/02_login.png)
 
 Después del login, el selector permite elegir uno de cuatro tableros y muestra cifras clave leídas desde la base de datos.
@@ -206,7 +217,7 @@ Todo con planes gratuitos.
 ```
 scripts/        Cuadernos de Jupyter numerados en orden de ejecución (sin salidas)
 tablero/        Sitio web (HTML, CSS, JS)
-  sql/          Esquema de la base de datos y de seguridad
+  sql/          Esquema, seguridad y cargos de la base de datos
 docs/           Documento de entendimiento e imágenes de este README
 datos/          Datos de ACTHO: solo en local, no se publican
 ```
@@ -223,7 +234,7 @@ Abrir los cuadernos de `scripts/` con el kernel de `.venv`.
 
 **Sitio web**
 
-1. Crear un proyecto en Supabase y ejecutar `tablero/sql/01_esquema.sql`. Los datos de ACTHO no se publican; se cargan en la tabla `tablero_datos` a partir de las tablas limpias que generan los scripts.
+1. Crear un proyecto en Supabase y ejecutar `tablero/sql/01_esquema.sql` y luego `04_cargos.sql`. Los datos de ACTHO no se publican; se cargan en la tabla `tablero_datos` a partir de las tablas limpias que generan los scripts.
 2. Poner la URL y la llave pública en `tablero/config.js`.
 3. Crear un usuario en Supabase Auth (Authentication → Users).
 4. Servir la carpeta `tablero/` con cualquier servidor estático, por ejemplo `python -m http.server`.

@@ -4,9 +4,11 @@ async function salir(){await sb.auth.signOut();location.href='login.html'}
 async function guardia(){const{data}=await sb.auth.getSession();if(!data.session)location.replace('login.html');return data.session}
 async function cargarApp(){
 const ses=await guardia();if(!ses)return;
-const{data,error}=await sb.from('tablero_datos').select('clave,datos');
-if(error||!data||!data.length){await salir();return}
-data.forEach(r=>{window[r.clave]=r.datos});
+const[{data,error},{data:perm}]=await Promise.all([sb.from('tablero_datos').select('clave,datos'),sb.rpc('mis_tableros')]);
+if(error||!data||!data.length||!perm||!perm.length){await sb.auth.signOut();location.href='login.html?e=cargo';return}
+window.PERM=perm;window.X={};
+data.forEach(r=>{if(/^X_/.test(r.clave))Object.assign(window.X,r.datos);else window[r.clave]=r.datos});
+if(!window.C)window.C={tipos:[],kams:[],e:'',r:''};
 document.getElementById('usr').textContent=ses.user.email;
 const el=document.createElement('script');el.text=document.getElementById('app').textContent;document.body.appendChild(el)}
 if(document.documentElement.dataset.protegida!==undefined&&!document.getElementById('app'))guardia().then(s=>{const u=document.getElementById('usr');if(s&&u)u.textContent=s.user.email});

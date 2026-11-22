@@ -22,9 +22,16 @@ a.card{text-decoration:none;color:inherit;display:block;transition:.15s;padding:
 <a class="card" href="tablero.html?v=fin"><h2>Finanzas</h2><p>Vencimientos por mes, renovaciones e ingreso anual en riesgo.</p><div class="k"><div><small>Vencen en 2027</small><strong data-k="v27">—</strong></div><div><small>Renovaciones, 2 meses</small><strong data-k="ren">—</strong></div></div><em>Abrir →</em></a>
 </div></div>
 <script>
-guardia().then(async s=>{if(!s)return;const{data}=await sb.from('tablero_datos').select('clave,datos');if(!data)return;const o={};data.forEach(r=>{o[r.clave]=r.datos});const D=o.D,X=o.X;if(!D||!X)return;
+guardia().then(async s=>{if(!s)return;const[{data},{data:perm}]=await Promise.all([sb.from('tablero_datos').select('clave,datos'),sb.rpc('mis_tableros')]);
+if(!data||!perm||!perm.length){await sb.auth.signOut();location.href='login.html?e=cargo';return}
+const mapa={dir:'resumen',ev:'eventos',com:'comunicaciones',fin:'finanzas'};
+document.querySelectorAll('a.card[href*="?v="]').forEach(a=>{if(!perm.includes(mapa[a.getAttribute('href').split('=')[1]]))a.remove()});
+const o={X:{}};data.forEach(r=>{if(/^X_/.test(r.clave))Object.assign(o.X,r.datos);else o[r.clave]=r.datos});const D=o.D,X=o.X;if(!D)return;
 const f=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');const sum=a=>a.reduce((x,y)=>x+y,0);
-const v={n:D.Todos.n,rojo:D.Todos.rojo,ev:X.ev.length,insc:sum(X.ev.map(e=>e.t.Todos)),per:X.pe.Todos.per,rec:X.pe.Todos.rec,v27:sum(Object.entries(X.venm.Todos).filter(([k])=>k>='2027-01').map(e=>e[1])),ren:sum(Object.values(X.reno.Todos))};
-document.querySelectorAll('[data-k]').forEach(e=>{contar(e,f(v[e.dataset.k]))})});
+const v={n:D.Todos.n,rojo:D.Todos.rojo};
+if(X.ev)Object.assign(v,{ev:X.ev.length,insc:sum(X.ev.map(e=>e.t.Todos))});
+if(X.pe)Object.assign(v,{per:X.pe.Todos.per,rec:X.pe.Todos.rec});
+if(X.venm)Object.assign(v,{v27:sum(Object.entries(X.venm.Todos).filter(([k])=>k>='2027-01').map(e=>e[1])),ren:sum(Object.values(X.reno.Todos))});
+document.querySelectorAll('[data-k]').forEach(e=>{if(v[e.dataset.k]!==undefined)contar(e,f(v[e.dataset.k]))})});
 </script>
 </body></html>
