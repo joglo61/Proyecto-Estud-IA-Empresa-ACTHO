@@ -74,3 +74,27 @@ update public.tablero_datos set tableros=array['resumen'] where clave='C';
 drop policy if exists leer_autenticados on public.tablero_datos;
 drop policy if exists leer_por_cargo on public.tablero_datos;
 create policy leer_por_cargo on public.tablero_datos for select to authenticated using (tableros && public.mis_tableros());
+
+create extension if not exists pgcrypto with schema extensions;
+create table if not exists public.invitaciones(
+codigo text primary key,
+cargo text not null check (cargo in ('direccion','junta','comercial','eventos','contabilidad')),
+activo boolean not null default true,
+creado timestamptz not null default now()
+);
+alter table public.invitaciones enable row level security;
+revoke all on public.invitaciones from anon,authenticated;
+
+create or replace function public.crear_invitacion(para_cargo text) returns text
+language plpgsql security definer set search_path=public,extensions as $$
+declare c text;
+begin
+c:=upper(encode(gen_random_bytes(5),'hex'));
+c:=substr(c,1,5)||'-'||substr(c,6,5);
+insert into public.invitaciones(codigo,cargo) values (c,para_cargo);
+return c;
+end $$;
+revoke all on function public.crear_invitacion(text) from public,anon,authenticated;
+
+grant select on public.invitaciones to service_role;
+grant select,insert,update on public.perfiles to service_role;

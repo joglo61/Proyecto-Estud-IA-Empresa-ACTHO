@@ -103,7 +103,9 @@ El sitio pide inicio de sesión (Supabase Auth). Las cuentas se crean manualment
 | Experiencias y eventos | Eventos y Comunicaciones |
 | Contabilidad | Finanzas |
 
-Para crear una cuenta: en Supabase → Authentication → Add user, y luego en el SQL Editor `select public.asignar_cargo('correo@empresa.com','contabilidad');`. Los cargos válidos son `direccion`, `junta`, `comercial`, `eventos` y `contabilidad`. La cuenta de evaluador tiene cargo `direccion`.
+**Crear cuenta desde el login.** La pantalla de ingreso tiene la opción "Crear cuenta con código de invitación". La persona escribe correo, contraseña y el código de su área; el código define el cargo y entra directo, sin correo de confirmación. Sin un código válido no se crea la cuenta, y el registro abierto de Supabase sigue desactivado. El registro lo hace la función `registro` (`tablero/funciones/registro.ts`), que valida el código con la llave de servicio.
+
+Para generar o renovar un código, en el SQL Editor de Supabase: `select public.crear_invitacion('contabilidad');`. Para desactivar uno: `update public.invitaciones set activo=false where codigo='XXXXX-XXXXX';`. Los cargos válidos son `direccion`, `junta`, `comercial`, `eventos` y `contabilidad`. Los códigos no se publican en el repositorio. La cuenta de evaluador tiene cargo `direccion`.
 
 ![Login](docs/img/02_login.png)
 
@@ -218,6 +220,7 @@ Todo con planes gratuitos.
 scripts/        Cuadernos de Jupyter numerados en orden de ejecución (sin salidas)
 tablero/        Sitio web (HTML, CSS, JS)
   sql/          Esquema, seguridad y cargos de la base de datos
+  funciones/    Función de registro con código de invitación
 docs/           Documento de entendimiento e imágenes de este README
 datos/          Datos de ACTHO: solo en local, no se publican
 ```
