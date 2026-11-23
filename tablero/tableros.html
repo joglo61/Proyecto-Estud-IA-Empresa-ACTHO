@@ -95,7 +95,6 @@ if(can('comunicaciones')&&X.pe)nv.push(kp(X.pe.Todos.per,'Personas \u00fanicas',
 if(can('comunicaciones')&&X.enc)nv.push(kp(Math.round(X.enc.Todos.si/X.enc.Todos.n*100),'Satisfechos','de '+X.enc.Todos.n+' respuestas','%'));
 if(can('resumen'))nv.push(kp(D.n,'Afiliados vigentes','en la cartera'));
 if(nv.length)N+=`<div class="bn"><h3>ACTHO EN CIFRAS</h3><div class="nn">${nv.join('')}</div></div>`;
-if(can('resumen'))N+=`<div class="gd"><b>C\u00f3mo leer el sem\u00e1foro</b><div class="ps"><div class="p"><i style="background:${VR}"></i><div><b>Rojo</b><span>Vence en 90 d\u00edas o menos y sin asistencia en 6 meses: contactar primero.</span></div></div><div class="p"><i style="background:${AM}"></i><div><b>Amarillo</b><span>Una sola se\u00f1al de riesgo: dar seguimiento.</span></div></div><div class="p"><i style="background:${VE}"></i><div><b>Verde</b><span>Sin se\u00f1ales de riesgo: mantener la relaci\u00f3n.</span></div></div></div></div>`;
 const at=(c,t,sb,h,d)=>`<a class="ac" href="${h}" style="animation-delay:${d}s"><i style="background:${c}">\u2192</i><span><b>${t}</b><span>${sb}</span></span></a>`;
 let Q='',q=0;const dq=()=>(.7+(q++)*.08).toFixed(2);
 if(can('resumen'))Q+=at(VR,'Empresas en rojo','Lista para contactar','tablero.html?v=dir',dq());

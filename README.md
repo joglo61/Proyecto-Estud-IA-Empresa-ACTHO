@@ -109,9 +109,17 @@ Para generar o renovar un código, en el SQL Editor de Supabase: `select public.
 
 ![Login](docs/img/02_login.png)
 
-Después del login, el selector permite elegir uno de cuatro tableros y muestra cifras clave leídas desde la base de datos.
+Pantalla para crear cuenta con código de invitación:
+
+![Crear cuenta](docs/img/02b_registro.png)
+
+Después del login, el selector muestra un centro de alertas ("Para hoy"), una tarjeta por cada tablero con su gráfico, las cifras de ACTHO, atajos y el pie del proyecto. Todo se calcula desde la base de datos y solo aparece lo que el cargo puede ver.
 
 ![Selector de tableros](docs/img/03_selector.png)
+
+Vista de una cuenta de Contabilidad: solo ve las alertas, la tarjeta y los atajos de Finanzas.
+
+![Selector para Contabilidad](docs/img/03b_selector_contabilidad.png)
 
 ### Tablero Resumen
 
