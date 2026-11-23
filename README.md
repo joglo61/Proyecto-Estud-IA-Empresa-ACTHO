@@ -123,7 +123,7 @@ Vista de una cuenta de Contabilidad: solo ve las alertas, la tarjeta y los atajo
 
 ### Tablero Resumen
 
-Cifras de afiliados vigentes, semáforo de riesgo, vencimientos de membresía, inscripciones por mes, lista priorizada de empresas a contactar y asistentes que no están en el CRM.
+Cifras de afiliados vigentes, semáforo de riesgo, vencimientos de membresía, inscripciones por mes, lista priorizada de empresas a contactar y asistentes que no están en el CRM. Al final trae la guía "Cómo leer el semáforo".
 
 ![Tablero Resumen](docs/img/04_resumen.png)
 
@@ -133,19 +133,19 @@ Cifras de afiliados vigentes, semáforo de riesgo, vencimientos de membresía, i
 
 ### Tablero Eventos
 
-Inscripciones por línea de oferta 2027, por modalidad y ranking de eventos.
+Inscripciones por línea de oferta 2027, por modalidad y ranking de eventos. Al final explica qué cuenta cada inscripción y que no confirma asistencia.
 
 ![Tablero Eventos](docs/img/06_eventos.png)
 
 ### Tablero Comunicaciones
 
-Temas que piden los asistentes en las encuestas y segmentos de empresas y personas a quienes escribir, con la acción sugerida.
+Temas que piden los asistentes en las encuestas y segmentos de empresas y personas a quienes escribir, con la acción sugerida. Incluye el porcentaje que acepta recibir información. Al final explica personas recurrentes, temas pedidos y el alcance de la encuesta.
 
 ![Tablero Comunicaciones](docs/img/07_comunicaciones.png)
 
 ### Tablero Finanzas
 
-Membresías que vencen por mes, altas y renovaciones, y una calculadora de ingreso en riesgo donde se escribe la tarifa anual (ACTHO eliminó los importes de los datos).
+Membresías que vencen por mes, altas y renovaciones, y una calculadora de ingreso en riesgo donde se escribe la tarifa anual (ACTHO eliminó los importes de los datos). Al final explica cómo usar la calculadora y cómo leer los colores del gráfico.
 
 ![Tablero Finanzas](docs/img/08_finanzas.png)
 
@@ -155,7 +155,9 @@ Membresías que vencen por mes, altas y renovaciones, y una calculadora de ingre
 - Resaltado de la selección al hacer clic.
 - Animaciones de entrada y de actualización.
 - Descripción breve bajo el título de cada gráfico.
-- Diseño adaptable a celular.
+- Pie explicativo propio en cada tablero.
+- Selector con alertas, cifras y atajos que cambian según el cargo.
+- Diseño adaptable a celular: pestañas en cuadrícula y gráficos que caben en pantallas de 390 px.
 
 ## 7. Resultados
 
